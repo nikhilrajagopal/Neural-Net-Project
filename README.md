@@ -1,10 +1,10 @@
-# Neural-Net-Project
+# Neural Net Project
 
 ## Convolutional Neural Network (CNN) for CIFAR-10 Classification
 
 This repository contains code for training a Convolutional Neural Network (CNN) on the CIFAR-10 dataset using PyTorch. The CIFAR-10 dataset consists of 60,000 32x32 color images in 10 classes, with 6,000 images per class.
 
-## Prerequisites
+### Prerequisites
 
 Make sure you have the following dependencies installed:
 
@@ -13,11 +13,11 @@ Make sure you have the following dependencies installed:
 - torchvision
 - numpy
 
-## Dataset
+### Dataset
 
 The CIFAR-10 dataset will be automatically downloaded and preprocessed when running the code. It will be split into a training set (80% of the data) and a validation set (20% of the data).
 
-## Model Architecture
+### Model Architecture
 
 The CNN model used for this classification task consists of several convolutional layers followed by fully connected layers. The architecture is as follows:
 
@@ -46,7 +46,7 @@ The CNN model used for this classification task consists of several convolutiona
 23. Dropout (p=0.5)
 24. Fully connected layer (input: 512, output: 10)
 
-## Training
+### Training
 
 The model is trained using stochastic gradient descent (SGD) optimizer with a learning rate of 0.5. The learning rate is adjusted using an exponential decay scheduler with a decay factor of 0.9.
 
@@ -54,17 +54,64 @@ The training is performed for a total of 15 epochs. During each epoch, the model
 
 After each epoch, the accuracy and loss on the training set are recorded. Additionally, the accuracy on the validation set is computed.
 
-## Results
+### Results
 
 The final validation accuracy achieved by the model is printed after training. The model is evaluated on the validation set to measure its performance.
 
-## Usage
+### Usage
 
 To run the code, execute the following jupyter notebook: `CIFAR_10.ipynb`
 
 You can modify the hyperparameters such as batch size, learning rate, and number of epochs in the code. Additionally, you can experiment with different model architectures by uncommenting the alternative CNN architecture provided in the code.
 Remember to have the CIFAR-10 dataset downloaded or set the `download` parameter to `True` in the `torchvision.datasets.CIFAR10` function to download the dataset automatically.
 
-## Conclusion
+### Conclusion
 
 This code provides a basic implementation of a CNN for CIFAR-10 classification using PyTorch. You can use it as a starting point to explore and experiment with different CNN architectures, hyperparameters, and training techniques to improve the model's performance.
+
+## Multilayer Perceptron (MLP) for FashionMNIST Classification
+
+This repository contains code for training a Multilayer Perceptron (MLP) on the FashionMNIST dataset using PyTorch. The FashionMNIST dataset consists of 60,000 28x28 grayscale images of 10 fashion categories, with 6,000 images per category.
+
+### Prerequisites
+
+Make sure you have the following dependencies installed:
+
+- Python 3.x
+- PyTorch
+- torchvision
+- numpy
+
+### Dataset
+
+The FashionMNIST dataset will be automatically downloaded and preprocessed when running the code. It will be split into a training set and a validation set.
+
+### Model Architecture
+
+The MLP model used for this classification task consists of three fully connected layers. The architecture is as follows:
+
+1. Fully connected layer (input: 784, output: 256)
+2. ReLU activation
+3. Fully connected layer (input: 256, output: 128)
+4. ReLU activation
+5. Fully connected layer (input: 128, output: 10)
+
+### Training
+
+The model is trained using stochastic gradient descent (SGD) optimizer with a learning rate of 1e-3. The training is performed for a total of 60 epochs. During each epoch, the model is trained on the training set in batches of size 64. The loss function used is cross-entropy loss.
+
+After each epoch, the accuracy and loss on the training set and validation set are recorded.
+
+### Results
+
+The training accuracy, validation accuracy, training loss, and validation loss for each epoch are printed after training.
+
+### Usage
+
+To run the code, execute the following jupyter notebook: 'MNIST.ipynb'
+
+You can modify the hyperparameters such as batch size, learning rate, and number of epochs in the code.
+
+### Conclusion
+
+This code provides a basic implementation of an MLP for FashionMNIST classification using PyTorch. You can use it as a starting point to explore and experiment with different MLP architectures, hyperparameters, and training techniques to improve the model's performance.
